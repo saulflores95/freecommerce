@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import logo from './logo.svg'
 import './App.css'
 
 import  HomePage from './pages/home-page/components/homepage'
-import ShopPage from './pages/shop-page/containers/shop'
+import ShopPage from './pages/shop-page/shop.component'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/components/sign-in-and-sign-up'
 import CheckoutPage from './pages/checkout/checkout.component'
 
