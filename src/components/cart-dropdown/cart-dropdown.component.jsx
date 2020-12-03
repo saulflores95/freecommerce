@@ -4,22 +4,38 @@ import './cart-dropdown.styles.scss'
 import CartItem from '../cart-item/cart-item.component'
 import { connect } from 'react-redux'
 import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { createStructuredSelector } from 'reselect'
+import { withRouter } from 'react-router-dom'
+import { toggleCartHidden } from '../../redux/cart/cart.actions'
 
-const CartDropdown = ({cartItems}) => (
+const CartDropdown = ({cartItems, history, dispatch }) => (
     <div className='cart-dropdown'>
         <div className='cart-items'>
             {
+                cartItems.length ?
                 cartItems.map(cartItem => (
                     <CartItem key={cartItem.id} item={cartItem} />
                 ))
+                : (
+                    <span className='empty-message'>Your cart is empty</span>
+                )
             }
         </div>
-        <CustomButton>GO TO CHECKOUT</CustomButton>
-    </div>
+        <CustomButton onClick={() => {
+            history.push('/checkout')
+            dispatch(toggleCartHidden())
+        }}>GO TO CHECKOUT</CustomButton>
+    </div> 
 )
 
-const mapStateToProps = state => ({
-    cartItems: selectCartItems(state)
+const mapStateToProps = createStructuredSelector({
+    cartItems: selectCartItems
 })
 
-export default connect(mapStateToProps)(CartDropdown)  
+/*
+    The order we wrap the components matters, becouse withRouter passes 
+    the match History and Location objects, Into the component that is returned connected
+    We will get the connected connected first, then the location object, 
+    in this case its history
+*/
+export default withRouter(connect(mapStateToProps)(CartDropdown))
