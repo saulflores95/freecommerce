@@ -33,8 +33,9 @@ class App extends Component {
         })
       }
       setCurrentUser(userAuth)
-    })
-  }
+
+  })
+}
 
   componentWillUnmount () {
     this.unsubscribeFromAuth()
