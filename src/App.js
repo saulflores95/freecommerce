@@ -57,8 +57,8 @@ class App extends Component {
 
           <Route exact path='/become-seller' render={() => 
             this.props.currentUser 
-            ? (<Redirect to='/' />) 
-            : <SellerPage />} />
+            ? (<SellerPage />) 
+            : <Redirect to='/' /> }/>
         </Switch>
       </div>
     )
