@@ -8,6 +8,7 @@ import  HomePage from './pages/home-page/components/homepage'
 import ShopPage from './pages/shop-page/shop.component'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/components/sign-in-and-sign-up'
 import CheckoutPage from './pages/checkout/checkout.component'
+import SellerPage from './pages/seller-page/seller-page.component'
 
 import Header from './components/header/components/header'
 
@@ -53,6 +54,11 @@ class App extends Component {
             this.props.currentUser 
             ? (<Redirect to='/' />) 
             : <SignInAndSignUpPage />} />
+
+          <Route exact path='/become-seller' render={() => 
+            this.props.currentUser 
+            ? (<Redirect to='/' />) 
+            : <SellerPage />} />
         </Switch>
       </div>
     )
