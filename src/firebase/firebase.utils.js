@@ -4,26 +4,25 @@
   import 'firebase/firestore'
   import 'firebase/auth'
 
-  // var firebaseConfig = {
-  //   apiKey: "AIzaSyB5gz88ofZgPcrIwIkKmmVXxEHxs7OVq-A",
-  //   authDomain: "freecommerce-db.firebaseapp.com",
-  //   databaseURL: "https://freecommerce-db.firebaseio.com",
-  //   projectId: "freecommerce-db",
-  //   storageBucket: "freecommerce-db.appspot.com",
-  //   messagingSenderId: "158157423218",
-  //   appId: "1:158157423218:web:424c0621a77661b5b638eb",
-  //   measurementId: "G-S6B2YNQL79"
-  // };
-
   var firebaseConfig = {
-    apiKey: "AIzaSyAC0Edp5exz7Fia85BbZcjQs7UnKKJbOqY",
-    authDomain: "mxship-6df43.firebaseapp.com",
-    projectId: "mxship-6df43",
-    storageBucket: "mxship-6df43.appspot.com",
-    messagingSenderId: "802464087340",
-    appId: "1:802464087340:web:4b0d26d3129ab804b38089",
-    measurementId: "G-SPS84Y41EN"
+    apiKey: "AIzaSyDUZ--9jO9YKFNMgQJ-h9Jo4hUCzOhibaI",
+    authDomain: "mxship-db.firebaseapp.com",
+    projectId: "mxship-db",
+    storageBucket: "mxship-db.appspot.com",
+    messagingSenderId: "777887116572",
+    appId: "1:777887116572:web:b3158d85f3478644e11ed9",
+    measurementId: "G-LNSPR4VJH8"
   };
+
+  // var firebaseConfig = {
+  //   apiKey: "AIzaSyAC0Edp5exz7Fia85BbZcjQs7UnKKJbOqY",
+  //   authDomain: "mxship-6df43.firebaseapp.com",
+  //   projectId: "mxship-6df43",
+  //   storageBucket: "mxship-6df43.appspot.com",
+  //   messagingSenderId: "802464087340",
+  //   appId: "1:802464087340:web:4b0d26d3129ab804b38089",
+  //   measurementId: "G-SPS84Y41EN"
+  // };
 
   export const createUserProfileDocument = async (userAuth, additionalData) => {
     if(!userAuth) return
@@ -50,6 +49,9 @@
 
 
   export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    console.log("addCollectionAndDocuments collectionKey: ", collectionKey)
+    console.log("addCollectionAndDocuments objectsToAdd: ", objectsToAdd)
+
     const collectionRef = firestore.collection(collectionKey)
 
     const batch = firestore.batch()
@@ -61,6 +63,7 @@
   }
 
   export const convertCollectionsSnapshotToMap = (collections) => {
+    console.log("convertCollectionsSnapshotToMap collections: ", collections)
     const transformedCollections = collections.docs.map(doc => {
       const { title, items } = doc.data()
       return {
@@ -77,7 +80,12 @@
     }, {})
   }
 
-  firebase.initializeApp(firebaseConfig)
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig)
+  } else {
+      firebase.app(); // if already initialized, use that one
+  }
+
 
   export const auth = firebase.auth()
   export const firestore = firebase.firestore()
