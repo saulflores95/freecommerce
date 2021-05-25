@@ -10,4 +10,4 @@ const HomePage = () => (
     </div>
 )
 
-export default WithOgTags(HomePage)
+export default HomePage
