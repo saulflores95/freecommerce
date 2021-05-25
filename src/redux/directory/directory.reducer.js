@@ -26,10 +26,17 @@ const INITIAL_STATE = {
             linkUrl: 'shop/womens'
         },
         {
+            title: 'Green Gods',
+            imageUrl: 'https://firebasestorage.googleapis.com/v0/b/mxship-db.appspot.com/o/greengods%2FWhatsApp%20Image%202021-04-14%20at%203.10.06%20PM.jpeg?alt=media&token=ab37f946-83f2-4335-af89-d7ee03755422',
+            size: 'large',
+            id: 5,
+            linkUrl: 'shop/green%20gods'
+        },
+        {
             title: 'mens',
             imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
             size: 'large',
-            id: 5,
+            id: 6,
             linkUrl: 'shop/mens'
         }
     ]
