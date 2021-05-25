@@ -55,10 +55,9 @@ class App extends Component {
             ? (<Redirect to='/' />) 
             : <SignInAndSignUpPage />} />
 
-          <Route exact path='/become-seller' render={() => 
-            this.props.currentUser 
-            ? (<SellerPage />) 
-            : <Redirect to='/' /> }/>
+          <Route exact path='/become-seller'>
+            <SellerPage />
+          </Route>
         </Switch>
       </div>
     )
