@@ -1,29 +1,29 @@
 const INITIAL_STATE = { 
     sections: [
         {
+            title: 'womens',
+            imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+            id: 1,
+            linkUrl: 'shop/womens'
+        },
+        {
             title: 'hats',
             imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-            id: 1,
+            id: 2,
             linkUrl: 'shop/hats',
         },
         {
-            title: 'jackets',
-            imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-            id: 2,
-            linkUrl: 'shop/jackets'
-        },
-        {
-            title: 'sneakers',
-            imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+            title: 'mens',
+            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
             id: 3,
-            linkUrl: 'shop/sneakers'
+            linkUrl: 'shop/mens'
         },
         {
-            title: 'womens',
-            imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+            title: 'Todos Santos Brand',
+            imageUrl: 'https://firebasestorage.googleapis.com/v0/b/mxship-db.appspot.com/o/todossantosbrand%2FWhatsApp%20Image%202021-05-26%20at%205.21.37%20PM.jpeg?alt=media&token=2df44670-9e14-418a-91f6-26522661db7a',
             size: 'large',
             id: 4,
-            linkUrl: 'shop/womens'
+            linkUrl: 'shop/todos%20santos%20brand'
         },
         {
             title: 'Green Gods',
@@ -33,8 +33,8 @@ const INITIAL_STATE = {
             linkUrl: 'shop/green%20gods'
         },
         {
-            title: 'mens',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+            title: 'jackets',
+            imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png ',
             size: 'large',
             id: 6,
             linkUrl: 'shop/mens'
